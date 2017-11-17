@@ -1,0 +1,11 @@
+#clang-4.0 libtasn1-4.12 libfuzzr-unknow
+
+COV_FLAGS="-fsanitize-coverage=trace-pc-guard"
+
+CC="clang -fsanitize=address $COV_FLAGS" CXX="clang++ -fsanitize=address $COV_FLAGS" ./configure  --prefix=$PWD/install
+
+clang -g -fsanitize=address $COV_FLAGS -c -I ./ myfuzz.c
+
+clang -g -fsanitize=address $COV_FLAGS -c -I ./ -I../ -I ../gl/  -I../lib fuzz-main.c
+
+clang++   -g -fsanitize=address -Wl,--whole-archive -Wl,-no-whole-archive  ../lib/*.o  ../gl/*.o ../lib/gllib/*.o /home/icy/comp/libFuzzer/libFuzzer.a fuzz-main.o myfuzz.o -o asnPar
