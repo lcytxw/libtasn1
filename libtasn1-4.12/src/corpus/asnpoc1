@@ -1,0 +1,20 @@
+#if HAVE_CONFIG_H
+# include "config.h"
+#endif
+
+#include <libtasn1.h>
+
+const asn1_static_node TFPA-2015-002-libtasn1-4.2-null-ptr_asn1_tab[] = {
+  { "X", 536875024, NULL },
+  { NULL, 1073741836, NULL },
+  { "i", 1880096780, "e"},
+  { "t", 1073741825, "0"},
+  { NULL, 1, ""},
+  { "NumericString", 1610612754, NULL },
+  { "e", 13, NULL },
+  { "e", 1880096780, "e"},
+  { NULL, 1, "i"},
+  { "e", 806354956, "e"},
+  { NULL, 1, "e"},
+  { NULL, 0, NULL }
+};
